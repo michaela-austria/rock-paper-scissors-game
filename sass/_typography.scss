@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    color: #333;
+}
+
+.playerInfo{
+    text-align: center;
+
+    &__name{
+      font-weight: 700;
+      font-size: 4rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      word-spacing: 2px;
+      font-weight: 300;
+
+      @media only screen and (max-width: 48em) {
+        font-size: 3rem;
+      }
+    }
+  
+    &__score{
+      font-weight: 400;
+      font-size: 8rem;
+      color: #c7365f;
+
+      @media only screen and (max-width: 48em) {
+        font-size: 4rem;
+      }
+    }
+  }
+
+
+
+.statement-container{
+ &__message{
+  font-size: 4rem;
+  font-weight: 700;
+ }
+}
+
+
+.answer{
+  position: relative;
+
+  &__counter{
+    font-weight: 700;
+    font-size: 8rem;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+}

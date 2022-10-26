@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Rock Paper Scissors</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <section class="player player--0 player--active">
+            <div class="playerInfo">
+                <h2 class="playerInfo__name" id="name--0">You</h2>
+                <p class="playerInfo__score" id="score--0">0</p>
+            </div>
+            
+            <div class="answer">
+                <div class="imgContainer">
+                    <img src="img/rock.png" alt="rock" class="imgContainer__img hide" id="userImage">
+                </div>
+            </div>
+
+            <div class="choices">
+                <button class="btn choices__container btn--rock" id="rock">✊🏻 Rock</button>
+                <button class="btn choices__container btn--paper" id="paper">✋🏻 Paper</button>
+                <button class="btn choices__container btn--scissors" id="scissors">✌🏻 Scissors</button>
+            </div>
+        </section>
+
+        <section class="player player--1">
+            <div class="playerInfo">
+                <h2 class="playerInfo__name" id="name--1">Computer</h2>
+                <p class="playerInfo__score" id="score--1">0</p>
+            </div>
+            
+            <div class="answer">
+                <h3 class="answer__counter hide">5</h3>
+                <div class="imgContainer">
+                    <img src="img/paper.png" alt="rock" class="imgContainer__img  blur" id="computerImage">
+                </div>
+            </div>
+        </section>
+
+        <section class="statement-container">
+            <p class="statement-container__message">START THE GAME</p>
+            <button class="btn statement-container__button btn--new hide">🔄 Restart Game</button>
+        </section>
+    </main>
+</body>
+
+</html>
