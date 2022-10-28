@@ -28,12 +28,14 @@ const userImage = document.getElementById('userImage');
 const computerImage = document.getElementById('computerImage');
 const computerCounter = document.querySelector('.answer__counter');
 
-const scoreUser = document.getElementById('score--0');
-const scoreComputer = document.getElementById('score--1');
+let scoreUser = document.getElementById('score--0');
+let scoreComputer = document.getElementById('score--1');
 
 const message = document.querySelector('.statement-container__message');
 const btnReset = document.getElementById('btn--new');
 
+const playerUser = document.querySelector('.player--0');
+const playerComputer = document.querySelector('.player--1');
 
 const changeImage = function($user,$getData){
     $user.src = "";
@@ -52,6 +54,32 @@ const displayMessage = function($message, $color = "inherit"){
     btnChoices.classList.remove('hide');
 }
 
+const switchPlayer = function(){
+    playerComputer.classList.toggle('player--active');
+    playerUser.classList.toggle('player--active');
+}
+
+const playerWon = function($player){
+    playerComputer.classList.remove('player--active');
+    playerUser.classList.remove('player--active');
+
+    $player.classList.add('player--winner');
+    btnChoices.classList.add('hide');
+
+    console.log("player won from playerWon()");
+}
+
+const updateScore = function($currentUser, $player) {
+
+    let getCurrentScore = +$currentUser.textContent;
+    getCurrentScore++;
+    $currentUser.textContent = getCurrentScore;
+
+    if(+$currentUser.textContent === 5){
+        playerWon($player);
+    }
+}
+
 const checkResults = function(){
     const userChoice = userImage.alt;
     const computerChoice = computerImage.alt;
@@ -60,22 +88,17 @@ const checkResults = function(){
         userChoice == "paper" && computerChoice == "rock" ||
         userChoice == "rock" && computerChoice == "scissors" 
     ){
-        displayMessage("You won!", "green")
+        displayMessage("You won!", "green");
+        updateScore(scoreUser, playerUser);
     };
-
-    // if(userChoice == "scissors" && computerChoice == "paper") displayMessage("You won!", "green");
-    // if(userChoice == "paper" && computerChoice == "rock") displayMessage("You won!", "green");
-    // if(userChoice == "rock" && computerChoice == "scissors") displayMessage("You won!", "green");
   
     if (userChoice == "paper" && computerChoice == "scissors" ||
         userChoice == "rock" && computerChoice == "paper" ||
         userChoice == "scissors" && computerChoice == "rock"
     ){
         displayMessage("Computer won!", "red");
+        updateScore(scoreComputer, playerComputer);
     };
-    // if(userChoice == "paper" && computerChoice == "scissors") displayMessage("Computer won!", "red");
-    // if(userChoice == "rock" && computerChoice == "paper") displayMessage("Computer won!", "red");
-    // if(userChoice == "scissors" && computerChoice == "rock") displayMessage("Computer won!", "red");
 
 
     if (userChoice == "scissors" && computerChoice == "scissors" ||
@@ -103,6 +126,8 @@ const computerAnswer = function(){
 
             computerCounter.textContent = 5;
 
+            switchPlayer();
+
         } else{
             timer--;
             computerCounter.textContent = timer;
@@ -123,8 +148,8 @@ btnChoices.addEventListener('click', function(btn){
 
     if(!getData.img) return;
 
+    switchPlayer();
+
     changeImage(userImage, getData);
     computerAnswer();
-    // checkResults();
-
 });
