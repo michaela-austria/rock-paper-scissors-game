@@ -32,7 +32,7 @@ let scoreUser = document.getElementById('score--0');
 let scoreComputer = document.getElementById('score--1');
 
 const message = document.querySelector('.statement-container__message');
-const btnReset = document.getElementById('btn--new');
+const btnReset = document.querySelector('.btn--new');
 
 const playerUser = document.querySelector('.player--0');
 const playerComputer = document.querySelector('.player--1');
@@ -66,7 +66,7 @@ const playerWon = function($player){
     $player.classList.add('player--winner');
     btnChoices.classList.add('hide');
 
-    console.log("player won from playerWon()");
+    btnReset.classList.toggle('hide');
 }
 
 const updateScore = function($currentUser, $player) {
@@ -153,3 +153,24 @@ btnChoices.addEventListener('click', function(btn){
     changeImage(userImage, getData);
     computerAnswer();
 });
+
+
+
+btnReset.addEventListener('click', function(){
+    displayMessage('START THE GAME');
+
+    btnChoices.classList.remove('hide');
+    btnReset.classList.add('hide');
+
+    computerImage.classList.add('blur')
+    userImage.classList.add('hide');
+
+    scoreComputer.textContent = 0;
+    scoreUser.textContent = 0;
+
+    playerUser.classList.add('player--active');
+    playerComputer.classList.remove('player--active');
+
+    playerUser.classList.remove('player--winner');
+    playerComputer.classList.remove('player--winner');
+})
