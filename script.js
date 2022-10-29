@@ -174,3 +174,8 @@ btnReset.addEventListener('click', function(){
     playerUser.classList.remove('player--winner');
     playerComputer.classList.remove('player--winner');
 })
+
+
+const currentYear = new Date();
+const dynamincYear = document.querySelector('.dynamicYear');
+dynamincYear.textContent = currentYear.getFullYear();

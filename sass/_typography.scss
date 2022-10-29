@@ -27,9 +27,9 @@ body{
     }
   
     &__score{
-      font-weight: 400;
+      font-weight: 600;
       font-size: 8rem;
-      color: #c7365f;
+      color: #e0a458;
 
       @media only screen and (max-width: 48em) {
         font-size: 4rem;
@@ -43,6 +43,12 @@ body{
  &__message{
   font-size: 4rem;
   font-weight: 700;
+
+  span{
+    display: block;
+    font-weight: 500;
+    font-size: 2rem;
+  }
  }
 }
 
@@ -60,4 +66,26 @@ body{
     transform: translate(-50%, -50%);
     z-index: 10;
   }
+}
+
+
+.player{
+  &--winner{
+    background-color: #2f2f2f;
+
+    .playerInfo{
+      &__name{
+        color: #e0a458;
+      }
+    }
+  }
+}
+
+.copyright{
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #fff;
 }
