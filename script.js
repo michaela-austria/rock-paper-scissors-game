@@ -38,6 +38,9 @@ const playerUser = document.querySelector('.player--0');
 const playerComputer = document.querySelector('.player--1');
 
 const changeImage = function($user,$getData){
+
+    if(!$getData.img) return;
+
     $user.src = "";
     $user.src = $getData.img;
     $user.alt = $getData.name;
@@ -111,7 +114,7 @@ const checkResults = function(){
 
 
 const computerAnswer = function(){
-    let timer = 5;
+    let timer = 2;
     computerCounter.classList.toggle('hide');
     
     const updateNumber = function(){
@@ -124,7 +127,7 @@ const computerAnswer = function(){
 
             checkResults();
 
-            computerCounter.textContent = 5;
+            computerCounter.textContent = 2;
 
             switchPlayer();
 
