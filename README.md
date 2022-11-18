@@ -8,12 +8,12 @@ Rock Paper Scissors Game where user can play and try to beat the computer. The f
 
 ## Flowchart
 
-![Flowchart](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Flowchart](./flowchart.jpg)
 
 
 ## App Screens
 
-![Flowchart](https://via.placeholder.com/468x300?text=App+Screenshot+Here) 
+![App Screens](./appscreens.png) 
 ## Run Locally
 
 Install dependencies (this will install `sass` and `live-server`)
