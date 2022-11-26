@@ -28,11 +28,6 @@ Start the server
   npm run start
 ```
 
-Build CSS
-
-```bash
-  npm run build:css
-```
 
 ## License
 
